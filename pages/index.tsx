@@ -29,6 +29,10 @@ export default function Home() {
     console.log("data.data.token >>>> ", data.data.token);
 
     localStorage.setItem('userId', data?.data?.user?._id);
+    // set userId in cookie in next.js
+    document.cookie = `userId=${data?.data?.user?._id}`;
+    document.cookie = `token=${data?.data?.token}`;
+
     localStorage.setItem('fullName', data?.data?.user?.fullName);
     localStorage.setItem('email', data?.data?.user?.email);
     localStorage.setItem('image', data?.data?.user?.image);
